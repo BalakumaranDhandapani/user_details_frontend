@@ -61,7 +61,7 @@ function App() {
 
   let getDetails = async () => {
     try {
-      const datas = await axios.get("http://localhost:8000/api/getAll");
+      const datas = await axios.get("https://userdetails-backend.onrender.com/api/getAll");
       setdataList(datas.data);
       setLoading(false);
     } catch (error) {
