@@ -41,7 +41,7 @@ function App() {
           await axios.post("https://userdetails-backend.onrender.com/api/adduser", values);
           getDetails();
         } else {
-          await axios.patch(`http://localhost:8000/api/update/${currentUser._id}`, values);
+          await axios.patch(`https://userdetails-backend.onrender.com/api/update/${currentUser._id}`, values);
           getDetails();
         }
         setEdit(false);
