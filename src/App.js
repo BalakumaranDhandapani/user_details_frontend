@@ -38,7 +38,7 @@ function App() {
       try {
         setLoading(true);
         if (!isEdit) {
-          await axios.post("http://localhost:8000/api/adduser", values);
+          await axios.post("https://userdetails-backend.onrender.com/api/adduser", values);
           getDetails();
         } else {
           await axios.patch(`http://localhost:8000/api/update/${currentUser._id}`, values);
@@ -73,7 +73,7 @@ function App() {
     try {
       const confirmDelete = window.confirm("Are you sure do you want to delete the data?");
       if (confirmDelete) {
-        await axios.delete(`http://localhost:8000/api/delete/${id}`)
+        await axios.delete(`https://userdetails-backend.onrender.com/api/delete/${id}`)
         getDetails();
       }
     } catch (error) {
@@ -84,7 +84,7 @@ function App() {
   let handleEdit = async (id) => {
     try {
       // get particular id data from API
-      const userById = await axios.get(`http://localhost:8000/api/getOne/${id}`);
+      const userById = await axios.get(`https://userdetails-backend.onrender.com/api/getOne/${id}`);
       setCurrentUser(userById.data);
       //set the data in form
       myFormik.setValues({
